@@ -6,9 +6,9 @@ class EKSClusterManager:
         region = os.getenv('AWS_REGION')
         nodegroup_name = os.getenv('NODEGROUP_NAME')
         node_type = os.getenv('NODE_TYPE')
-        nodes = os.getenv('NODES')
-        nodes_min = os.getenv('NODES_MIN')
-        nodes_max = os.getenv('NODES_MAX')
+        nodes = os.getenv('N_NODES')
+        nodes_min = os.getenv('N_NODES_MIN')
+        nodes_max = os.getenv('N_NODES_MAX')
 
         # Create EKS cluster
         os.system(f'eksctl create cluster --name {cluster_name} --region {region} --nodegroup-name {nodegroup_name} --node-type {node_type} --nodes {nodes} --nodes-min {nodes_min} --nodes-max {nodes_max} --managed')
